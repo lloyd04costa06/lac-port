@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  background: #0f0f10;
+}
+
+/* MAIN WRAPPER */
+.app {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  background: radial-gradient(
+    circle at center,
+    #1a1a1c 0%,
+    #0f0f10 60%,
+    #0b0b0c 100%
+  );
+}
+
+/* SOFT CENTER SPOTLIGHT */
+.app::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  filter: blur(120px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CONTENT */
+.content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* LOGO */
+.logo {
+  width: 260px;
+  margin-bottom: 18px;
+
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+
+  animation: float 6s ease-in-out infinite;
+}
+
+/* COMING SOON TEXT */
+.coming-soon {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* SUBTLE LETTER ANIMATION */
+.coming-soon span {
+  display: inline-block;
+  animation: softWave 3s ease-in-out infinite;
+}
+
+/* stagger */
+.coming-soon span:nth-child(1) { animation-delay: 0s; }
+.coming-soon span:nth-child(2) { animation-delay: 0.05s; }
+.coming-soon span:nth-child(3) { animation-delay: 0.1s; }
+.coming-soon span:nth-child(4) { animation-delay: 0.15s; }
+.coming-soon span:nth-child(5) { animation-delay: 0.2s; }
+.coming-soon span:nth-child(6) { animation-delay: 0.25s; }
+.coming-soon span:nth-child(7) { animation-delay: 0.3s; }
+.coming-soon span:nth-child(8) { animation-delay: 0.35s; }
+.coming-soon span:nth-child(9) { animation-delay: 0.4s; }
+.coming-soon span:nth-child(10) { animation-delay: 0.45s; }
+.coming-soon span:nth-child(11) { animation-delay: 0.5s; }
+
+/* ANIMATIONS */
+
+@keyframes softWave {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
